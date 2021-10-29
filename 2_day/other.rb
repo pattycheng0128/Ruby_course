@@ -5,9 +5,12 @@ class Integer
 
   def ago
     "#{self} days ago"
-    
   end
 end
 
 p 3.days.ago
 p 5.days.ago
+
+# self == main = Object.new
+p self
+p self.class
