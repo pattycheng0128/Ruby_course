@@ -6,14 +6,14 @@ RSpec.describe Bank do
     # test case 測試個案
     it "可以存錢" do
       # 3A原則:Arrange、Act、Assert
-      # Arrange
+      # Arrange 安排
       account = Bank.new(10)
 
-      # Act
+      # Act 行為
       account.deposit(5) #存5元
 
-      # Assert
-      expect(account.balance).to be 15
+      # Assert 斷言(預期的結果)
+      expect(account.balance).to be 10
     end
 
     # 測試個案2

@@ -2,14 +2,17 @@ require "./bank_error.rb"
 
 # uninitialized constant Bank
 class Bank
+
+  attr_reader :balance # 回傳目前金額
+
   def initialize(money)
-    @money = money
+    @balance = money
   end
 
   #存錢功能
   def deposit(amount)
     if amount > 0
-      @money += amount
+      @balance += amount
     else
       puts "不可以存 0 元或是小於 0 元的金額"
       # raise "This is an exception"
@@ -22,17 +25,13 @@ class Bank
       raise BankAmountNegativeError.new("amount must greater than zero")
     end
 
-    if amount > @money
+    if amount > @balance
       raise BankBalanceError.new("balance is not enough")
     end
 
-    @money -= amount
+    @balance -= amount
 
     return amount
   end
 
-  # 回傳目前金額
-  def balance
-    return @money
-  end
 end
